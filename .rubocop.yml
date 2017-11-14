@@ -5,8 +5,9 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.3
   Exclude:
-    - 'valkyrie/**/*'
-Naming/FileName:
+    - 'bin/*'
+    - 'vendor/**/*'
+Style/FileName:
   Enabled: true
   Exclude:
     - 'Gemfile'
