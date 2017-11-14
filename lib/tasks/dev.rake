@@ -20,7 +20,7 @@ namespace :server do
     SolrWrapper.wrap(shared_solr_opts.merge(port: 8984, instance_dir: 'tmp/blacklight-core-test')) do |solr|
       solr.with_collection(name: "blacklight-core-test", dir: File.expand_path("../../../solr/config", __FILE__).to_s) do
         $stderr.puts solr_message(solr)
-        wait_for_int
+        loop { sleep 1 }
         $stderr.print "Shutting down solr..."
       end
     end
@@ -38,20 +38,11 @@ namespace :server do
     SolrWrapper.wrap(shared_solr_opts.merge(port: 8983, instance_dir: 'tmp/blacklight-core')) do |solr|
       solr.with_collection(name: "blacklight-core", dir: File.expand_path("../../../solr/config", __FILE__).to_s) do
         $stderr.puts solr_message(solr)
-        wait_for_int
+        loop { sleep 1 }
         $stderr.print "Shutting down solr..."
       end
     end
     $stderr.puts "done."
-  end
-
-  def wait_for_int
-    last = false
-    Signal.trap("INT") { last = true }
-    loop do
-      sleep 1
-      break if last
-    end
   end
 
   def solr_message(solr)
