@@ -9,6 +9,9 @@ dependencies:
     - bundle exec rake server:test:
         background: true
     - bin/jetty_wait
+database:
+  override:
+    - echo "Skipping database step."
 notify:
   webhooks:
     - url: https://coveralls.io/webhook?repo_token=4FU3HeCQVosqJzcLPlw0OIOa6ViRwkInX
