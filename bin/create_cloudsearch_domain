@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'aws-sdk-cloudsearch'
+require 'yaml'
+require 'pry'
+
+options = { schema: File.expand_path('../../config/schema.yaml', __FILE__) }
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: #{File.basename(__FILE__)} [options]"
+
+  opts.on('-h', '--help') do
+    puts opts
+    exit
+  end
+
+  opts.on('-d', '--domain DOMAIN', 'Name of domain to create') do |v|
+    options[:domain] = v
+  end
+
+  opts.on('-s', '--schema SCHEMA', 'Path to CloudSearch schema in YAML format') do |v|
+    options[:schema] = v
+  end
+end
+parser.parse!
+
+if options[:schema].nil? or options[:domain].nil?
+  puts parser
+  exit
+end
+
+schema = YAML.safe_load(File.read(options[:schema]), [Symbol])
+client = Aws::CloudSearch::Client.new
+
+$stderr.print "Creating search domain #{options[:domain]}..."
+client.create_domain domain_name: options[:domain]
+$stderr.puts "Done."
+
+schema.each do |field|
+  if field[:index_field_name] =~ /^[a-z][a-z0-9_]*\*?$|^\*[a-z0-9_]*$/
+    $stderr.print "Creating search field definition #{options[:domain]}.#{field[:index_field_name]}..."
+    client.define_index_field(domain_name: options[:domain], index_field: field)
+    $stderr.puts "Done."
+    sleep 0.5 # To avoid throttling
+  else
+    $stderr.puts "Skipping field definition #{options[:domain]}.#{field[:index_field_name]}..."
+  end
+end

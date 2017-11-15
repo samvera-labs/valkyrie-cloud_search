@@ -1,0 +1,634 @@
+---
+- :index_field_name: _version_
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: id
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: timestamp
+  :index_field_type: date
+  :date_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: lat
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: lng
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: all_text_timv
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: false
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_ti"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: false
+    :sort_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tim"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: false
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_ts"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: true
+    :sort_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tsm"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tsi"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: true
+    :sort_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tsim"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tiv"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: false
+    :sort_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_timv"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: false
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tsiv"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: true
+    :sort_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tsimv"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: true
+    :analysis_scheme: _mul_default_
+- :index_field_name: "*_tei"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: false
+    :sort_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_teim"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: false
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_tes"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: true
+    :sort_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_tesm"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_tesi"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: true
+    :sort_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_tesim"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_teiv"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: false
+    :sort_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_teimv"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: false
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_tesiv"
+  :index_field_type: text
+  :text_options:
+    :return_enabled: true
+    :sort_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_tesimv"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: true
+    :analysis_scheme: _en_default_
+- :index_field_name: "*_si"
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_sim"
+  :index_field_type: literal-array
+  :literal_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_ss"
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ssm"
+  :index_field_type: literal-array
+  :literal_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_ssi"
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ssim"
+  :index_field_type: literal-array
+  :literal_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_ii"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_iim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_is"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ism"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_isi"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_isim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_iti"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_itim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_its"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_itsm"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_itsi"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_itsim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dti"
+  :index_field_type: date
+  :date_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_dtim"
+  :index_field_type: date-array
+  :date_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_dts"
+  :index_field_type: date
+  :date_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dtsm"
+  :index_field_type: date-array
+  :date_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dtsi"
+  :index_field_type: date
+  :date_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dtsim"
+  :index_field_type: date-array
+  :date_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dtti"
+  :index_field_type: date
+  :date_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_dttim"
+  :index_field_type: date-array
+  :date_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_dtts"
+  :index_field_type: date
+  :date_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dttsm"
+  :index_field_type: date-array
+  :date_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dttsi"
+  :index_field_type: date
+  :date_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dttsim"
+  :index_field_type: date-array
+  :date_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_li"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_lim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_ls"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_lsm"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_lsi"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_lsim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_lti"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_ltim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_lts"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ltsm"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_ltsi"
+  :index_field_type: int
+  :int_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ltsim"
+  :index_field_type: int-array
+  :int_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dbi"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_dbim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_dbs"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dbsm"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dbsi"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dbsim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dbti"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_dbtim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_dbts"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dbtsm"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_dbtsi"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_dbtsim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_fi"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_fim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_fs"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_fsm"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_fsi"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_fsim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_fti"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_ftim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+- :index_field_name: "*_fts"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ftsm"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_ftsi"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_ftsim"
+  :index_field_type: double-array
+  :double_array_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+- :index_field_name: "*_bi"
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: 'false'
+- :index_field_name: "*_bs"
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: 'false'
+- :index_field_name: "*_bsi"
+  :index_field_type: literal
+  :literal_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: 'false'
+- :index_field_name: "*_coordinate"
+  :index_field_type: double
+  :double_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_lli"
+  :index_field_type: latlon
+  :lat_lon_options:
+    :search_enabled: true
+    :return_enabled: false
+    :facet_enabled: false
+    :sort_enabled: true
+- :index_field_name: "*_lls"
+  :index_field_type: latlon
+  :lat_lon_options:
+    :search_enabled: false
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*_llsi"
+  :index_field_type: latlon
+  :lat_lon_options:
+    :search_enabled: true
+    :return_enabled: true
+    :facet_enabled: true
+    :sort_enabled: true
+- :index_field_name: "*suggest"
+  :index_field_type: text-array
+  :text_array_options:
+    :return_enabled: false
+    :analysis_scheme: _mul_default_
