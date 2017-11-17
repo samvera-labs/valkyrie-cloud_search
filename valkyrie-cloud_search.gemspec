@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'valkyrie'
+  spec.add_dependency 'valkyrie-redis'
   spec.add_dependency 'aws-sdk-cloudsearch'
   spec.add_dependency 'aws-sdk-cloudsearchdomain'
 
